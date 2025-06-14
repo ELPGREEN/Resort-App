@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - TabBar Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Contato</h1>
+            <div class="language-switcher">
+                <i class="fas fa-globe"></i>
+                <select id="language" aria-label="Selecionar idioma">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div>
+        </header>
+        <nav class="side-menu" role="navigation" aria-hidden="true">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre</a></li>
+                <li><a href="business.html">Parceiros</a></li>
+                <li><a href="franquias.html">Franquias</a></li>
+                <li class="has-submenu">
+                    <a href="#destinos" aria-haspopup="true">Destinos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#sardegna">Sardenha</a></li>
+                        <li><a href="#franca">França</a></li>
+                        <li><a href="#monaco">Mônaco</a></li>
+                        <li><a href="#outros">Outros EU</a></li>
+                    </ul>
+                </li>
+                <li><a href="viagens-reservas.html">Viagens & Reservas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+                <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <main id="content" role="main">
+            <section>
+                <h2>Entre em Contato</h2>
+                <form id="contact-form">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" placeholder="Seu nome" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" placeholder="Sua mensagem..." rows="5" required></textarea>
+                    <button type="submit" class="section-button">Enviar</button>
+                </form>
+                <p id="contact-response" style="display: none; margin-top: 10px; color: green;">Mensagem enviada!</p>
+            </section>
+        </main>
+        <footer class="tab-bar" role="tablist">
+            <button class="tab" data-section="index" role="tab" aria-label="Seção Home" aria-selected="false">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button class="tab" data-section="business" role="tab" aria-label="Seção Parceiros" aria-selected="false">
+                <i class="fas fa-briefcase"></i> Parceiros
+            </button>
+            <button class="tab" data-section="pesquisa" role="tab" aria-label="Seção Pesquisa" aria-selected="false">
+                <i class="fas fa-search"></i> Pesquisa
+            </button>
+            <button class="tab" data-section="favoritos" role="tab" aria-label="Seção Favoritos" aria-selected="false">
+                <i class="fas fa-heart"></i> Favoritos
+            </button>
+            <button class="tab" data-section="login" role="tab" aria-label="Seção Login" aria-selected="false">
+                <i class="fas fa-user"></i> Login
+            </button>
+            <button class="tab" data-section="viagens-reservas" role="tab" aria-label="Seção Viagens e Reservas" aria-selected="false">
+                <i class="fas fa-plane"></i> Viagens & Reservas
+            </button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="TabBarNavigation.js"></script>
+</body>
+</html>

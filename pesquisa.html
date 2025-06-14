@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa - TabBar Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Pesquisa</h1>
+            <div class="language-switcher">
+                <i class="fas fa-globe"></i>
+                <select id="language" aria-label="Selecionar idioma">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div>
+        </header>
+        <nav class="side-menu" role="navigation" aria-hidden="true">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre</a></li>
+                <li><a href="business.html">Parceiros</a></li>
+                <li><a href="franquias.html">Franquias</a></li>
+                <li class="has-submenu">
+                    <a href="#destinos" aria-haspopup="true">Destinos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#sardegna">Sardenha</a></li>
+                        <li><a href="#franca">França</a></li>
+                        <li><a href="#monaco">Mônaco</a></li>
+                        <li><a href="#outros">Outros EU</a></li>
+                    </ul>
+                </li>
+                <li><a href="viagens-reservas.html">Viagens & Reservas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+                <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <main id="content" role="tabpanel" aria-labelledby="tab-pesquisa">
+            <section>
+                <h2>Pesquisar Destinos</h2>
+                <p>Encontre o destino ideal com filtros detalhados: data, número de pessoas, orçamento e preferências (praias, cidades históricas).</p>
+                <form id="search-form">
+                    <label for="search-destination">Destino:</label>
+                    <input type="text" id="search-destination" placeholder="Ex.: Sardenha, Paris" required>
+                    <label for="search-date">Data:</label>
+                    <input type="date" id="search-date" required>
+                    <label for="search-guests">Nº de Pessoas:</label>
+                    <input type="number" id="search-guests" min="1" max="10" step="1" value="1" required>
+                    <label for="search-budget">Orçamento Máximo (€):</label>
+                    <input type="number" id="search-budget" min="50" max="5000" step="10" value="200" required>
+                    <button type="submit" class="section-button">Pesquisar</button>
+                </form>
+                <h3>Resultados</h3>
+                <ul class="search-results" id="search-results">
+                    <li>Torre Eiffel - França | 4.8/5 | €150/noite | 9h-00h | 2 km <button class="add-favorite">Adicionar</button></li>
+                    <li>Coliseu - Itália | 4.7/5 | €120/noite | 8h30-18h30 | 1.5 km <button class="add-favorite">Adicionar</button></li>
+                    <li>Sagrada Família - Espanha | 4.9/5 | €130/noite | 9h-20h | 3 km <button class="add-favorite">Adicionar</button></li>
+                </ul>
+                <div id="map" class="map-container"></div>
+            </section>
+        </main>
+        <footer class="tab-bar" role="tablist">
+            <button class="tab" data-section="index" role="tab" aria-label="Seção Home" aria-selected="false" aria-controls="content">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button class="tab" data-section="business" role="tab" aria-label="Seção Parceiros" aria-selected="false" aria-controls="content">
+                <i class="fas fa-briefcase"></i> Parceiros
+            </button>
+            <button class="tab active" data-section="pesquisa" role="tab" aria-label="Seção Pesquisa" aria-selected="true" aria-controls="content" id="tab-pesquisa">
+                <i class="fas fa-search"></i> Pesquisa
+            </button>
+            <button class="tab" data-section="favoritos" role="tab" aria-label="Seção Favoritos" aria-selected="false" aria-controls="content">
+                <i class="fas fa-heart"></i> Favoritos
+            </button>
+            <button class="tab" data-section="login" role="tab" aria-label="Seção Login" aria-selected="false" aria-controls="content">
+                <i class="fas fa-user"></i> Login
+            </button>
+            <button class="tab" data-section="viagens-reservas" role="tab" aria-label="Seção Viagens e Reservas" aria-selected="false" aria-controls="content">
+                <i class="fas fa-plane"></i> Viagens & Reservas
+            </button>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="TabBarNavigation.js"></script>
+</body>
+</html>

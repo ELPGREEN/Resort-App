@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TabBar Company: Líder em turismo europeu, oferecendo reservas personalizadas, guias interativos e experiências culturais sustentáveis.">
+    <meta name="keywords" content="turismo europeu, reservas de viagem, destinos culturais, TabBar Company, Sardenha, Paris, Roma, Barcelona">
+    <meta name="author" content="TabBar Company">
+    <meta property="og:title" content="Home - TabBar Company">
+    <meta property="og:description" content="Descubra destinos incríveis com a TabBar Company, sua parceira em viagens pela Europa.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+    <meta property="og:url" content="https://www.tabbarcompany.com">
+    <title>Home - TabBar Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.osmbuildings@0.0.5/dist/osmbuildings.0.2.css" />
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50?text=TabBar+Logo" alt="Logotipo TabBar Company">
+            </div>
+            <div class="language-switcher">
+                <i class="fas fa-globe"></i>
+                <select id="language" aria-label="Selecionar idioma">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div>
+        </header>
+        <nav class="side-menu" role="navigation" aria-hidden="true">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre</a></li>
+                <li><a href="business.html">Parceiros</a></li>
+                <li><a href="franquias.html">Franquias</a></li>
+                <li class="has-submenu">
+                    <a href="#destinos" aria-haspopup="true">Destinos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#sardegna">Sardenha</a></li>
+                        <li><a href="#franca">França</a></li>
+                        <li><a href="#monaco">Mônaco</a></li>
+                        <li><a href="#outros">Outros EU</a></li>
+                    </ul>
+                </li>
+                <li><a href="viagens-reservas.html">Viagens & Reservas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+                <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <main id="content" role="main">
+            <!-- Busca Rápida -->
+            <section class="search-section" aria-labelledby="search-heading">
+                <h2 id="search-heading">Planeje Sua Viagem</h2>
+                <form class="search-form" action="pesquisa.html" method="GET" role="search">
+                    <label for="destination">Destino:</label>
+                    <input type="text" id="destination" name="destination" placeholder="Ex: Paris, Roma..." required aria-required="true">
+                    <label for="check-in">Check-in:</label>
+                    <input type="date" id="check-in" name="check-in" required aria-required="true">
+                    <label for="check-out">Check-out:</label>
+                    <input type="date" id="check-out" name="check-out" required aria-required="true">
+                    <button type="submit" class="section-button">Pesquisar</button>
+                </form>
+            </section>
+
+            <!-- Introdução -->
+            <section class="intro-section" aria-labelledby="intro-heading">
+                <h2 id="intro-heading">Bem-vindo à TabBar Company</h2>
+                <p>Fundada em 2018 em Paris, a TabBar Company é líder em turismo europeu, conectando viajantes a mais de 100 destinos. Oferecemos reservas personalizadas, guias interativos e suporte 24/7, promovendo experiências culturais e sustentáveis.</p>
+                <a href="sobre-nos.html" class="section-button">Saiba Mais</a>
+            </section>
+
+            <!-- Carrossel -->
+            <section id="slide" class="slide-container" aria-labelledby="carousel-heading">
+                <h2 id="carousel-heading" class="visually-hidden">Destaques de Destinos</h2>
+                <div class="slide-wrapper">
+                    <div class="slide">
+                        <img data-src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="slide-bg" alt="Torre Eiffel em Paris">
+                        <img src="https://via.placeholder.com/150?text=Eiffel+Overlay" class="slide-overlay" alt="Overlay Torre Eiffel">
+                        <div class="slide-text">
+                            <h3>Torre Eiffel</h3>
+                            <p>Construída em 1889, símbolo de Paris com vistas panorâmicas a 324 metros de altura.</p>
+                            <a href="viagens-reservas.html" class="section-button">Reservar Agora</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img data-src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="slide-bg" alt="Coliseu em Roma">
+                        <img src="https://via.placeholder.com/150?text=Coliseum+Overlay" class="slide-overlay" alt="Overlay Coliseu">
+                        <div class="slide-text">
+                            <h3>Coliseu</h3>
+                            <p>Erguido entre 70-80 d.C., abrigava 50.000 espectadores em eventos históricos.</p>
+                            <a href="viagens-reservas.html" class="section-button">Reservar Agora</a>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img data-src="https://images.unsplash.com/photo-1507608869274-d3177b8d4988?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="slide-bg" alt="Sagrada Família em Barcelona">
+                        <img src="https://via.placeholder.com/150?text=Sagrada+Familia+Overlay" class="slide-overlay" alt="Overlay Sagrada Família">
+                        <div class="slide-text">
+                            <h3>Sagrada Família</h3>
+                            <p>Obra de Gaudí iniciada em 1882, ainda em construção, com arquitetura única.</p>
+                            <a href="viagens-reservas.html" class="section-button">Reservar Agora</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="slide-prev" aria-label="Slide anterior"><i class="fas fa-chevron-left"></i></button>
+                <button class="slide-next" aria-label="Próximo slide"><i class="fas fa-chevron-right"></i></button>
+            </section>
+
+            <!-- Destinos Populares -->
+            <section class="destinations-section" aria-labelledby="destinations-heading">
+                <h2 id="destinations-heading">Destinos Populares</h2>
+                <div class="destinations-grid">
+                    <article class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Paris, França com a Torre Eiffel ao fundo">
+                        <h3>Paris, França</h3>
+                        <p>4.8/5 | €150/noite | 9h-00h | 2 km do centro</p>
+                        <a href="viagens-reservas.html" class="section-button">Explorar</a>
+                    </article>
+                    <article class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1505761671935-60b3a2a63e22?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Roma, Itália com o Coliseu ao entardecer">
+                        <h3>Roma, Itália</h3>
+                        <p>4.7/5 | €120/noite | 8h30-18h30 | 1.5 km</p>
+                        <a href="viagens-reservas.html" class="section-button">Explorar</a>
+                    </article>
+                    <article class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1491557345352-08e8c72f8a60?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Barcelona, Espanha com a Sagrada Família">
+                        <h3>Barcelona, Espanha</h3>
+                        <p>4.9/5 | €130/noite | 9h-20h | 3 km</p>
+                        <a href="viagens-reservas.html" class="section-button">Explorar</a>
+                    </article>
+                    <article class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Londres, Reino Unido com o Big Ben e o Rio Tâmisa">
+                        <h3>Londres, Reino Unido</h3>
+                        <p>4.6/5 | €160/noite | 8h-22h | 1 km do centro</p>
+                        <a href="viagens-reservas.html" class="section-button">Explorar</a>
+                    </article>
+                    <article class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1588262518894-d8b2fc13fd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Amsterdã, Países Baixos com canais e bicicletas">
+                        <h3>Amsterdã, Países Baixos</h3>
+                        <p>4.8/5 | €140/noite | 9h-21h | 2.5 km</p>
+                        <a href="viagens-reservas.html" class="section-button">Explorar</a>
+                    </article>
+                    <article class="destination-card">
+                        <img src="https://images.unsplash.com/photo-1596432638676-9f7d31e3d0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Lisboa, Portugal com o Rio Tejo e a Ponte 25 de Abril">
+                        <h3>Lisboa, Portugal</h3>
+                        <p>4.7/5 | €110/noite | 8h30-19h | 2 km</p>
+                        <a href="viagens-reservas.html" class="section-button">Explorar</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Depoimentos -->
+            <section class="testimonials-section" aria-labelledby="testimonials-heading">
+                <h2 id="testimonials-heading">O Que Nossos Clientes Dizem</h2>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card">
+                        <p>"A TabBar transformou minha viagem à Sardenha em uma experiência inesquecível. Suporte impecável!"</p>
+                        <cite>— Ana Silva, Brasil</cite>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <p>"Reservas fáceis e guias detalhados. Roma foi incrível graças à TabBar!"</p>
+                        <cite>— Marco Rossi, Itália</cite>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <p>"Adorei a personalização das rotas em Paris. Recomendo a todos!"</p>
+                        <cite>— Emma Dupont, França</cite>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- Mapa Interativo -->
+            <section class="map-section" aria-labelledby="map-heading">
+                <h2 id="map-heading">Explore Nossos Destinos</h2>
+                <div id="map" style="height: 400px; margin-top: 20px;"></div>
+                <div class="map-controls">
+                    <button id="toggle-traffic" aria-label="Alternar tráfego">Tráfego</button>
+                    <button id="toggle-3d" aria-label="Alternar vista 3D">3D</button>
+                    <button id="get-location" aria-label="Obter localização atual">Minha Localização</button>
+                </div>
+            </section>
+
+            <!-- Newsletter -->
+            <section class="newsletter-section" aria-labelledby="newsletter-heading">
+                <h2 id="newsletter-heading">Inscreva-se na Nossa Newsletter</h2>
+                <form class="newsletter-form" action="#" method="POST">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required aria-required="true">
+                    <button type="submit" class="section-button">Inscrever-se</button>
+                </form>
+            </section>
+        </main>
+        <footer class="tab-bar" role="tablist">
+            <button class="tab active" data-section="index" role="tab" aria-label="Seção Home" aria-selected="true">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button class="tab" data-section="business" role="tab" aria-label="Seção Parceiros" aria-selected="false">
+                <i class="fas fa-briefcase"></i> Parceiros
+            </button>
+            <button class="tab" data-section="pesquisa" role="tab" aria-label="Seção Pesquisa" aria-selected="false">
+                <i class="fas fa-search"></i> Pesquisa
+            </button>
+            <button class="tab" data-section="favoritos" role="tab" aria-label="Seção Favoritos" aria-selected="false">
+                <i class="fas fa-heart"></i> Favoritos
+            </button>
+            <button class="tab" data-section="login" role="tab" aria-label="Seção Login" aria-selected="false">
+                <i class="fas fa-user"></i> Login
+            </button>
+            <button class="tab" data-section="viagens-reservas" role="tab" aria-label="Seção Viagens e Reservas" aria-selected="false">
+                <i class="fas fa-plane"></i> Viagens & Reservas
+            </button>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.osmbuildings@0.0.5/dist/osmbuildings.0.2.min.js"></script>
+    <script src="script.js"></script>
+    <script src="TabBarNavigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const map = L.map('map', {
+                zoomControl: true,
+                attributionControl: true
+            }).setView([40.9231, 9.4988], 5);
+
+            const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            const buildingsLayer = new OSMBuildings(map).load();
+            buildingsLayer.setStyle({ color: '#3182ce', opacity: 0.7 });
+
+            const markers = [
+                { coords: [48.8584, 2.2945], popup: 'Torre Eiffel, Paris' },
+                { coords: [41.8902, 12.4923], popup: 'Coliseu, Roma' },
+                { coords: [41.4036, 2.1744], popup: 'Sagrada Família, Barcelona' }
+            ];
+
+            markers.forEach(marker => {
+                L.marker(marker.coords)
+                    .addTo(map)
+                    .bindPopup(marker.popup)
+                    .openPopup();
+            });
+
+            const toggleTraffic = document.getElementById('toggle-traffic');
+            const toggle3D = document.getElementById('toggle-3d');
+            const getLocation = document.getElementById('get-location');
+
+            if (toggleTraffic) {
+                let trafficLayer = null;
+                toggleTraffic.addEventListener('click', () => {
+                    if (trafficLayer) {
+                        map.removeLayer(trafficLayer);
+                        trafficLayer = null;
+                        toggleTraffic.textContent = 'Tráfego';
+                    } else {
+                        trafficLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/traffic/{z}/{x}/{y}.png', {
+                            maxZoom: 19
+                        }).addTo(map);
+                        toggleTraffic.textContent = 'Remover Tráfego';
+                    }
+                });
+            }
+
+            if (toggle3D) {
+                toggle3D.addEventListener('click', () => {
+                    const isVisible = buildingsLayer.getOpacity() > 0;
+                    buildingsLayer.setOpacity(isVisible ? 0 : 0.7);
+                    toggle3D.textContent = isVisible ? '3D' : 'Remover 3D';
+                });
+            }
+
+            if (getLocation) {
+                getLocation.addEventListener('click', () => {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(position => {
+                            const { latitude, longitude } = position.coords;
+                            map.setView([latitude, longitude], 12);
+                            L.marker([latitude, longitude]).addTo(map).bindPopup('Sua localização').openPopup();
+                        }, () => {
+                            alert('Não foi possível obter sua localização.');
+                        });
+                    } else {
+                        alert('Geolocalização não suportada pelo navegador.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

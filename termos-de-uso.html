@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - TabBar Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Termos de Uso</h1>
+            <div class="language-switcher">
+                <i class="fas fa-globe"></i>
+                <select id="language" aria-label="Selecionar idioma">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div>
+        </header>
+        <nav class="side-menu" role="navigation" aria-hidden="true">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre</a></li>
+                <li><a href="business.html">Parceiros</a></li>
+                <li><a href="franquias.html">Franquias</a></li>
+                <li class="has-submenu">
+                    <a href="#destinos" aria-haspopup="true">Destinos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="#sardegna">Sardenha</a></li>
+                        <li><a href="#franca">França</a></li>
+                        <li><a href="#monaco">Mônaco</a></li>
+                        <li><a href="#outros">Outros EU</a></li>
+                    </ul>
+                </li>
+                <li><a href="viagens-reservas.html">Viagens & Reservas</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+                <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <main id="content" role="main">
+            <section>
+                <h2>Termos de Uso</h2>
+                <p>Última atualização: 14/06/2025. Ao usar o site da TabBar Company, você concorda com estes termos. Por favor, leia atentamente antes de prosseguir.</p>
+                <div class="section">
+                    <h2>1. Aceitação dos Termos <i class="fas fa-chevron-down"></i></h2>
+                    <div class="section-content">
+                        <p>Estes termos regem seu uso da plataforma TabBar Company. Ao acessar ou utilizar nossos serviços, você declara aceitar integralmente estas condições. Caso não concorde, por favor, não utilize o site.</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>2. Uso da Plataforma <i class="fas fa-chevron-down"></i></h2>
+                    <div class="section-content">
+                        <p>A plataforma é destinada exclusivamente para reservas de viagens, informações turísticas e serviços relacionados. É proibido o uso comercial não autorizado, a reprodução de conteúdo sem permissão ou qualquer atividade que viole leis aplicáveis.</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>3. Cancelamentos e Reembolsos <i class="fas fa-chevron-down"></i></h2>
+                    <div class="section-content">
+                        <p>Cancelamentos gratuitos são permitidos até 48 horas antes do check-in, sujeito às políticas específicas de nossos parceiros. Após esse período, reembolsos dependem das condições do parceiro e podem incorrer em taxas. Consulte os detalhes no momento da reserva.</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>4. Responsabilidades do Usuário <i class="fas fa-chevron-down"></i></h2>
+                    <div class="section-content">
+                        <p>Você é responsável por manter a confidencialidade de suas credenciais de login e por todas as atividades realizadas em sua conta. Informe-nos imediatamente sobre qualquer uso não autorizado.</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>5. Limitação de Responsabilidade <i class="fas fa-chevron-down"></i></h2>
+                    <div class="section-content">
+                        <p>A TabBar Company não se responsabiliza por perdas ou danos decorrentes de falhas técnicas, interrupções de serviço ou decisões baseadas em informações fornecidas por terceiros (parceiros ou usuários).</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>6. Alterações nos Termos <i class="fas fa-chevron-down"></i></h2>
+                    <div class="section-content">
+                        <p>Podemos atualizar estes termos periodicamente. As alterações entram em vigor após a publicação no site. Recomendamos revisar regularmente esta página.</p>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>7. Legislação Aplicável <i class="fas fa-chevron-down"></i></h2>
+                    <div class="section-content">
+                        <p>Estes termos são regidos pelas leis da França. Disputas serão resolvidas nos tribunais de Paris, salvo disposição em contrário.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="tab-bar" role="tablist">
+         <button class="tab" data-section="index" role="tab" aria-label="Seção Home" aria-selected="false">
+             <i class="fas fa-home"></i> Home
+         </button>
+         <button class="tab" data-section="business" role="tab" aria-label="Seção Parceiros" aria-selected="false">
+             <i class="fas fa-briefcase"></i> Parceiros
+         </button>
+         <button class="tab" data-section="pesquisa" role="tab" aria-label="Seção Pesquisa" aria-selected="false">
+             <i class="fas fa-search"></i> Pesquisa
+         </button>
+         <button class="tab" data-section="favoritos" role="tab" aria-label="Seção Favoritos" aria-selected="true">
+             <i class="fas fa-heart"></i> Favoritos
+         </button>
+         <button class="tab" data-section="login" role="tab" aria-label="Seção Login" aria-selected="false">
+             <i class="fas fa-user"></i> Login
+         </button>
+         <button class="tab" data-section="viagens-reservas" role="tab" aria-label="Seção Viagens e Reservas" aria-selected="false">
+             <i class="fas fa-plane"></i> Viagens & Reservas
+         </button>
+     </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="TabBarNavigation.js"></script>
+</body>
+</html>
